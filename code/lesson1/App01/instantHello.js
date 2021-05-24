@@ -1,2 +1,3 @@
-const username='Jack';
-console.log('hello ' + username);
+const name='Jhon';
+
+console.log("Hello "+this.name);

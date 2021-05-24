@@ -1,4 +1,3 @@
-require("./instantHello");
-const goodBye=require("./goodbye");
-
-goodBye();
+require('./instantHello');
+const goodBye=require('./goodbye');
+goodBye("Jhon");

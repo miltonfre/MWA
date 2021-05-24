@@ -1,0 +1,1 @@
+[{"_id":{"$oid":"60a586bdfba184a3f01831ed"},"name":"jack","gpa":"3.0"},{"_id":{"$oid":"60a586bdfba184a3f01831ee"},"name":"Jim","gpa":"2.8"},{"_id":{"$oid":"60a586bdfba184a3f01831ef"},"name":"Jill","gpa":"3.3"}]

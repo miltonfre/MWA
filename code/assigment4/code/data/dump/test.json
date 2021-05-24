@@ -1,0 +1,61 @@
+{
+    "students": [
+        {
+            "address": [
+                {
+                    "streetAddress": "711-2880 Nulla St.",
+                    "city": "Mankato",
+                    "state": "MI",
+                    "zipCode": "96522"
+                },
+                {
+                    "streetAddress": "P.O. Box 283 8562 Fusce Rd.",
+                    "city": "Frederick ",
+                    "state": "Nebraska",
+                    "zipCode": "20620"
+                }
+            ],
+            "_id": "60a71543c709ca48be386be4",
+            "name": "Jim",
+            "gpa": 2.8
+        },
+        {
+            "address": [
+                {
+                    "streetAddress": "606-3727 Ullamcorper. Street",
+                    "city": "Roseville",
+                    "state": "NH",
+                    "zipCode": "11523"
+                }
+            ],
+            "_id": "60a71543c709ca48be386be5",
+            "name": "Jill",
+            "gpa": 3.3
+        },
+        {
+            "address": [
+                {
+                    "streetAddress": "1000 N 4thSt MR#27",
+                    "city": "Fairfield",
+                    "state": "IA",
+                    "zipCode": "52557"
+                },
+                {
+                    "streetAddress": "300 river watch dr",
+                    "city": "Greenville",
+                    "state": "SC",
+                    "zipCode": "425567"
+                },
+                {
+                    "streetAddress": "47 ANYVILLE RD NW #2",
+                    "city": "Anytown",
+                    "state": "AZ",
+                    "zipCode": "02131"
+                }
+            ],
+            "_id": "60a71543c709ca48be386be6",
+            "name": "jack",
+            "gpa": 3
+        }
+    ]
+}

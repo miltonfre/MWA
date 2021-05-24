@@ -1,5 +1,3 @@
-module.exports=function(){
-    console.log('GoodBye');
+module.exports=function(name){
+    console.log("good bye "+name);
 }
-
-

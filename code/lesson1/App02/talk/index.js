@@ -1,12 +1,12 @@
 const hello=function(name){
-
+    console.log("this is hello function in index for "+name);
 }
 
 const intro=function(){
-    console.log();
+console.log("this is intro message in index");
 }
 
 module.exports={
-    greeting:hello,
-    intro: intro
+    hello:hello,
+    intro:intro
 }

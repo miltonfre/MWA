@@ -1,7 +1,9 @@
-const talk=require("./talk");
-const question=require("./talk/question.js");
+const index=require('./talk/index');
+const question =require('./talk/question');
+index.hello("jhon");
+index.intro();
 
-const answer= question.ask("Milton");
-answer();
-talk.greeting();
-talk.intro();
+const answer=question.ask("What is the first number?");
+console.log(answer);
+
+question.secondQuestion("second question?");
