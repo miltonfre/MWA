@@ -1,0 +1,90 @@
+<h3>Job's List</h3><br />
+
+<div ng-show="vm.visibleNewJobForm">
+    <form name="vm.jobForm" ng-submit="vm.addJob()">
+        <div class="card border-success mb-6" style="max-width: 60rem;">
+            <div class="card-header">Create a job</div>
+            <div class="card-body">
+                <h4 class="card-title">Please fill the information</h4>
+                <span ng-show="vm.myForm.name.$dirty && vm.jobForm.name.$invalid && vm.isSubmitted">
+                    Please vefiry the information
+                </span>
+                <div class="form-group">
+                    <label class="col-form-label col-form-label-sm mt-4" for="Title">Title</label>
+                    <input class="form-control form-control-sm" type="text" name="Title" placeholder="Title" required
+                        ng-model="vm.newJobTitle">
+                    <label class="col-form-label col-form-label-sm mt-4" for="Description">Description</label>
+                    <input class="form-control form-control-sm" type="text" name="Description" placeholder="Description"
+                        required ng-model="vm.newJobDescription">
+                    <label class="col-form-label col-form-label-sm mt-4" for="Salary">Salary</label>
+                    <input class="form-control form-control-sm" type="text" name="Salary" placeholder="Salary"
+                        ng-model="vm.newJobSalary">
+                    <label class="col-form-label col-form-label-sm mt-4" for="experience">Years of experience</label>
+                    <input class="form-control form-control-sm" type="text" name="experience"
+                        placeholder="Years of experience" ng-pattern="/^([01]?\d|20)$/" ng-model="vm.newJobExperience">
+                    <label class="col-form-label col-form-label-sm mt-4" for="skills">Skills</label>
+                    <button type="button" class="btn btn-outline-success" ng-click="vm.newSkill()">+</button><br />
+                    
+                    <div ng-repeat="(key, skill) in vm.newJobSkills track by $index">
+                        <input class="form-control form-control-sm" type="text" name="skill" placeholder="skill"
+                            ng-model="vm.newJobSkills[key]" required>
+                        <button type="button" class="btn btn-outline-success"
+                            ng-click="vm.delSkill($index)">-</button><br />
+                    </div>
+
+                    <!-- <input class="form-control form-control-sm" type="text" name="skills"
+                        placeholder='["Java","Javascript","AWS"]' required ng-model="vm.newJobSkills"> -->
+                    <br />
+                    <button type="submit" class="btn-success">Create Job</button>
+                    <button class="btn-warning" ng-click="vm.reset()">Cancel</button><BR />
+                </div>
+            </div>
+
+        </div>
+
+    </form>
+</div>
+<table class="table table-hover">
+    <thead>
+        <div class="btn-group" aria-label="Basic checkbox toggle button group">
+            <input type='text' ng-model="vm.count" style="max-width: 2rem;">
+            <button class="btn btn-primary" id="btncheck1" ng-click="vm.beforePage()">
+                <<</button>
+                    <span class="btn btn-primary">page # {{vm.offset +1}}</span>
+                    <button class="btn btn-primary" id="btncheck2" ng-click="vm.nextPage()">>></button>
+                    <button ng-if="!vm.visibleNewJobForm" class="btn-success" ng-click="vm.showNewJob()">new
+                        Job</button>
+        </div>
+        <tr>
+            <th scope="col">Title</th>
+            <th scope="col">Description</th>
+            <th scope="col">Salary</th>
+            <th scope="col">Experience</th>
+            <th scope="col">Skills</th>
+            <th scope="col">publish Date</th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="table-active" ng-repeat="job in vm.jobs">
+            <td><a href="#/jobs/{{job._id}}">{{job.title}}</a></td>
+            <td>{{job.description}}</td>
+            <td>{{job.salary | currency}}</td>
+            <td>{{job.experience}}</td>
+            <td><job-skills skills={{job.skills}}></job-skills>  </td>
+            <td>{{job.posDate | date:'MM/dd/yyyy'}}</td>
+            <td>
+                <button type=button class="btn btn-primary" 
+                ng-click="vm.editOneJob(job._id)">Edit</button>
+            </td>
+            <td>
+                <button type=button class="btn btn-danger" 
+                ng-click="vm.deleteOneJob(job._id)">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<!-- <div ng-repeat="job in vm.jobs">
+    <a href="#/jobs/{{job._id}}">{{job.title}}</a>
+</div> -->
