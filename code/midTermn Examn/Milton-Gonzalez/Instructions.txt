@@ -1,0 +1,19 @@
+For run the code:
+1. Open the project recommended with VS Code.
+2. Open terminal
+3. execute npm install
+4. execute npm start.
+
+
+
+PORT: 3000
+URL: http://localhost:3000/#/laureates
+
+
+BACKEND URL:
+GET 	/api/laureates/  		- Get all prizes- params: offset, count
+POST 	/api/laureates/ 		- Create new
+GET 	/api/laureates/  		- Get complete information of one prize
+PUT 	/api/laureates/  		- Replace the price
+DELETE 	/api/laureates/     	- Delete a price
+GET 	/api/laureates/search	- Search by country birdth - params: offset, count, search

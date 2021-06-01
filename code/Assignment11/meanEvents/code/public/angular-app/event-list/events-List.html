@@ -1,0 +1,32 @@
+<h3>Enjoy our next concerts</h3><br />
+<div ng-repeat="event in vm.events">
+    <a href="#/events/{{event._id}}">{{event.title}}</a>
+</div>
+<div ng-if="vm.isLoggedIn()">
+    <form name="vm.eventForm" ng-submit="vm.addEvent()">
+        <div class="card border-success mb-3" style="max-width: 20rem;">
+            <div class="card-header">Create a event</div>
+            <div class="card-body">
+                <h4 class="card-title">Please fill the information</h4>
+                <div class="form-group">
+                    <label class="col-form-label col-form-label-sm mt-4" for="inputSmall">Title</label>
+                    <input class="form-control form-control-sm" type="text" placeholder="Title" required
+                        ng-model="vm.newEventTitle">
+                    <label class="col-form-label col-form-label-sm mt-4" for="inputSmall">Description</label>
+                    <input class="form-control form-control-sm" type="text" placeholder="Description" required
+                        ng-model="vm.newEventDescription">
+                    <label class="col-form-label col-form-label-sm mt-4" for="inputSmall">Url Picture</label>
+                    <input class="form-control form-control-sm" type="text" placeholder="Url Picture" required
+                        ng-model="vm.newEventUrl">
+                    <label class="col-form-label col-form-label-sm mt-4" for="inputSmall">Event Date</label>
+                    <input class="form-control form-control-sm" type="text" placeholder="Event Date" required
+                        ng-model="vm.newEventDate">
+                    <br />
+                    <button type="submit" class="btn-success">Add Event</button><BR />
+                </div>
+            </div>
+
+        </div>
+
+    </form>
+</div>

@@ -1,0 +1,27 @@
+<h4>Detail prize</h4>
+<div class="card border-success mb-6" style="max-width: 60rem;">
+    <div class="card-header">Detail prize</div>
+    <div class="card-body">
+        <h4 class="card-title">Detail prize</h4>
+        <p><strong>Internal Id:</strong> {{vm.laureate.id}}</p>
+        <p><strong>Name:</strong> {{vm.laureate.firstname}} {{vm.laureate.surname}}</p>
+        <p><strong>born:</strong> {{vm.laureate.born | date:'MM/dd/yyyy'}}</p>
+        <p><strong>died:</strong> {{vm.laureate.died | date:'MM/dd/yyyy'}}</p>
+        <p><strong>bornCountry:</strong> {{vm.laureate.bornCountry}}</p>
+        <p><strong>bornCountryCode:</strong> {{vm.laureate.bornCountryCode}}</p>
+        <p><strong>bornCity:</strong> {{vm.laureate.bornCity}}</p>
+        <p><strong>diedCountry:</strong> {{vm.laureate.diedCountry}}</p>
+        <p><strong>diedCountryCode:</strong> {{vm.laureate.diedCountryCode}}</p>
+        <p><strong>diedCity:</strong> {{vm.laureate.diedCity}}</p>
+        <p><strong>gender:</strong> {{vm.laureate.gender}}</p>
+        <p><strong>year:</strong> {{vm.laureate.year}}</p>
+        <p><strong>category:</strong> {{vm.laureate.category}}</p>
+        <p><strong>motivation:</strong> {{vm.laureate.motivation}}</p>
+        <p><strong>affiliation:</strong> {{vm.laureate.affiliation}}</p>
+        
+        <br />
+        <button class="btn-success" ng-click="vm.comeBack()">Back to the List</button><BR />
+    </div>
+</div>
+
+</div>

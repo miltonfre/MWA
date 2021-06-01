@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html ng-app="meanEvents">
+
+<head>
+  <link href="./css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+  <title>The MEAN Events Application</title>
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Events</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01"
+        aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarColor01">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Home
+              <span class="visually-hidden">(current)</span>
+            </a>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="sum.html">Sum</a>
+          </li> -->
+
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+        </ul>
+        <form class="d-flex">
+          <input class="form-control me-sm-2" type="text" placeholder="Search">
+          <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+  <h1>The MEAN Events Application</h1>
+
+  <events-Navigation></events-Navigation>
+  <div class="container">
+
+    <div ng-view>
+    </div>
+  </div>
+
+  <!-- <script src="../node_modules/angular/angular.js"></script>
+<script src="../node_modules/angular-route/angular-route.js"></script> -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular-route.min.js"></script>
+  <script src="./angular-app/app.js"></script>
+  <script src="./angular-app/event-list/events-List-Controller.js"></script>
+  <script src="./angular-app/event-one/event-One-Controller.js"></script>
+  <script src="./angular-app/data-factory/event-data-factory.js"></script>
+  <script src="./angular-app/navigation-directive/navigation-directive.js"></script>
+  <script src="./angular-app/login/login-controller.js"></script>
+  <script src="./angular-app/register/register-controller.js"></script>
+  <script src="./angular-app/authentication/auth-factory.js"></script>
+  <script src="./angular-app/authentication/auth-interceptor.js"></script>
+  <script src="../node_modules/angular-jwt/dist/angular-jwt.js"></script>
+
+  <footer class="footer">
+    <div class="container">
+      <p class="text-muted" text-center>
+        <a href="path" target="_blank" height="60" alt="some text"></a>
+      </p>
+
+
+      <br />
+      <!-- <small class="class">Milton gonzalez developer</small> -->
+    </div>
+  </footer>
+</body>
+
+</html>

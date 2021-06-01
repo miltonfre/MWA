@@ -1,0 +1,129 @@
+<h3>Laureate's List</h3><br />
+
+<div ng-show="vm.visibleNewLaureateForm">
+    <form name="vm.laureateForm" ng-submit="vm.addLaureate()">
+        <div class="card border-success mb-6" style="max-width: 60rem;">
+            <div class="card-header">Create new Prize</div>
+            <div class="card-body">
+                <h4 class="card-title">Please fill the information</h4>
+                <span ng-show="vm.myForm.name.$dirty && vm.laureateForm.name.$invalid && vm.isSubmitted">
+                    Please vefiry the information
+                </span>
+                <div class="form-group">
+                    <label class="col-form-label col-form-label-sm mt-4" >Internal Id</label>
+                    <input class="form-control form-control-sm" type="text" name="firstName"  required
+                        ng-model="vm.newLaureateInteranlId">
+                    <label class="col-form-label col-form-label-sm mt-4" >First Name</label>
+                    <input class="form-control form-control-sm" type="text" name="firstName" placeholder="firstName" required
+                        ng-model="vm.newLaureateFirstName">
+                    <label class="col-form-label col-form-label-sm mt-4" >SurName</label>
+                    <input class="form-control form-control-sm" type="text" name="SurName" placeholder="SurName"
+                        ng-model="vm.newLaureateSurName">
+                    <label class="col-form-label col-form-label-sm mt-4" >Born</label>
+                    <input class="form-control form-control-sm" type="text" name="Born" placeholder="Born"
+                        ng-model="vm.newLaureateBorn">
+                    <label class="col-form-label col-form-label-sm mt-4" >Died</label>
+                    <input class="form-control form-control-sm" type="text" name="Died"
+                        ng-model="vm.newLaureateDied">
+                    <label class="col-form-label col-form-label-sm mt-4" >Born Country</label>
+                    <input class="form-control form-control-sm" type="text" name="BornCountry"
+                     ng-model="vm.newLaureateBornCountry">
+                    
+                    <label class="col-form-label col-form-label-sm mt-4">Born Country Code</label>
+                    <input class="form-control form-control-sm" type="text" name="BornCountryCode"
+                    ng-model="vm.newLaureateBornCountryCode">
+                    
+
+                    <label class="col-form-label col-form-label-sm mt-4" >Born City</label>
+                    <input class="form-control form-control-sm" type="text" name="BornCity"
+                    ng-model="vm.newLaureateBornCity">
+                    
+
+                    <label class="col-form-label col-form-label-sm mt-4" >DiedCountry</label>
+                    <input class="form-control form-control-sm" type="text" name="DiedCountry"
+                    ng-model="vm.newLaureateDiedCountry">
+                    
+
+                    <label class="col-form-label col-form-label-sm mt-4" >Died Country Code</label>
+                    <input class="form-control form-control-sm" type="text" name="DiedCountryCode"
+                     ng-model="vm.newLaureateDiedCountryCode">
+                    
+
+                    <label class="col-form-label col-form-label-sm mt-4" >Died City</label>
+                    <input class="form-control form-control-sm" type="text" name="DiedCity"
+                     ng-model="vm.newLaureateDiedCity">
+                    
+
+                    <label class="col-form-label col-form-label-sm mt-4" >Gender</label>
+                    <input class="form-control form-control-sm" type="text" 
+                    ng-model="vm.newLaureateGender">
+                    
+
+                    <label class="col-form-label col-form-label-sm mt-4">Year</label> 
+                    <input class="form-control form-control-sm" type="text" required
+                      ng-model="vm.newLaureateYear">
+                    
+
+                    <label class="col-form-label col-form-label-sm mt-4" >Category</label>
+                    <input class="form-control form-control-sm" type="text"
+                    ng-model="vm.newLaureateCategory">
+                    
+
+                    <label class="col-form-label col-form-label-sm mt-4" >Motivation</label>
+                    <input class="form-control form-control-sm" type="text" 
+                     ng-model="vm.newLaureateMotivation">
+                    
+
+                    <label class="col-form-label col-form-label-sm mt-4" >Affiliation</label>
+                    <input class="form-control form-control-sm" type="text" 
+                     ng-model="vm.newLaureateAffiliation">
+                    
+                    
+                    <br />
+                    <button type="submit" class="btn-success">Create</button>
+                    <button class="btn-warning" ng-click="vm.reset()">Cancel</button><BR />
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<table class="table table-hover">
+    <thead>
+        <div class="btn-group" aria-label="Basic checkbox toggle button group">
+            <input type='text' ng-model="vm.count" style="max-width: 2rem;">
+            <button class="btn btn-primary" id="btncheck1" ng-click="vm.beforePage()">
+                <<</button>
+                    <span class="btn btn-primary">page # {{vm.offset +1}}</span>
+                    <button class="btn btn-primary" id="btncheck2" ng-click="vm.nextPage()">>></button>
+                    <button ng-if="!vm.visibleNewLaureateForm" class="btn-success" ng-click="vm.showNewLaureate()">new
+                        Prize</button>
+                            <input class="form-control me-sm-2" type="text" placeholder="Search" ng-model=vm.searchText>
+                            <button class="btn btn-secondary my-2 my-sm-0"   ng-click="vm.searchLaureates()" >Search</button>
+                         
+        </div>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">prize year</th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="table-active" ng-repeat="laureate in vm.laureates">
+            <td><a href="#/laureates/details/{{laureate._id}}">{{laureate.firstname}} {{laureate.surname}}</a></td>           
+            <td>{{laureate.year}}</td>
+            <td>
+                <button type=button class="btn btn-success" 
+                ng-click="vm.detailsOneLaureate(laureate._id)">Details</button>
+                <button type=button class="btn btn-primary" 
+                ng-click="vm.editOneLaureate(laureate._id)">Edit</button>
+                
+                <button type=button class="btn btn-danger" 
+                ng-click="vm.deleteOneLaureate(laureate._id)">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<!-- <div ng-repeat="laureate in vm.laureates">
+    <a href="#/laureates/{{laureate._id}}">{{laureate.title}}</a>
+</div> -->
