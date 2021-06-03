@@ -1,0 +1,10 @@
+Easy onboarding
+Who are familiar with Javascript, switching to TypeScript is not so challenging.
+
+
+Static Typing:
+Static typing allows you to catch errors earlier in the debugging process.
+
+Popularity and loved
+TypeScript has climbed from seventh place in 2018 and 2019 to fourth overall in 2020 in the most popular programming language on GitHub
+StackOverflow developers survey among nearly 65,000 developers concluded that TypeScript is the second most loved programming language, beaten only by Rust.

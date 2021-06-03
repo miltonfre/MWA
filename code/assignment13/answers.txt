@@ -1,0 +1,22 @@
+1. What is Node
+Node is a JavaScript server-side platform, the mains process is single threaded but in background uses multiple threads to execute asynchronous code, Processing model mainly inspired by JavaScript Event-based model with JavaScript callback mechanism, node is fast and scalable. 
+Node is non-blocking which means that all functions ( callbacks ) are delegated to the event loop and they are ( or can be ) executed by different threads.
+
+
+2- What is the Event-Loop in Node?
+JavaScript has a concurrency model based on an event loop, which is responsible for executing the code, collecting and processing events, and executing queued sub-tasks.
+Whenever we run a Node program, a thread is automatically created. This thread is the only place where our entire codebase is going to be executed. this thread is called Event-Loop.
+The role of this loop is to schedule which operations our only thread should be performing at any given point in time
+
+
+3- Based on what we learned so far what are the differences between AngularJS and Angular?
+angularJS
+Model View-Controller
+javascript
+You can create the structure how you want
+
+Angular
+No model view-controller
+typescript
+has model and components
+by default is created under own structure, src folder for example has the main code files related with the angular application

@@ -1,0 +1,12 @@
+
+<h4>{{vm.game.title}}</h4>
+<p>
+    
+   Min Players: {{vm.game.minPlayers}} <br/>
+   Max Players: {{vm.game.maxPlayers}} <br/>
+</p>
+
+
+<form name="vm.gameForm" ng-submit="vm.deleteOneGame()">
+   <button type="submit" class="btn-success">Delete Game</button><BR />
+</form>

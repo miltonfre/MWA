@@ -1,0 +1,9 @@
+the problem is because refreshing the page the all variables come back to the intial state, the solution is store the value in sessionStorage like the token,
+
+if the login is correct
+$window.sessionStorage.isLoggedIn = true;
+
+and to access to the value:
+!$window.sessionStorage.isLoggedIn
+
+Attched the code and pics
