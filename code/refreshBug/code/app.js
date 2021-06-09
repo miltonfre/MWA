@@ -5,7 +5,7 @@ const router = require("./api/router");
 const path=require("path");
 
 
-app.set("port", 3006);
+app.set("port", 3009);
 app.use(express.static(path.join(__dirname,"public")));
 app.use("/node_modules",express.static(path.join(__dirname,"node_modules")));
 app.use(express.json());
