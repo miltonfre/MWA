@@ -1,0 +1,15 @@
+MEAN stack refers to a collection of techologies(4 in total) used to develop web applications based in javascript, with MEAN you can build robust web application fastly, connect the differents layers and give a succesfully result, each technology has its own rules and individuals behaviors, in the same sense, STC has its own "MEAN" but is called "big 4", eat good, sleep good, exercise and meditation, 4 components for have a succesfully result.
+MEAN in the COURSE
+M-> MongoDB
+E-> Express
+A-> Angular
+N-> Node JS
+
+MEAN IN STC
+M -> Meditation
+E -> Excercise
+A -> At least 8 hours sleeping (10 pm- 6 am)
+N -> Nutrition
+
+one is in technology the other is in the life.
+
