@@ -1,3 +1,4 @@
+<h1>List of games</h1>
 <ul>
     <li *ngFor="let game of games">
         <a routerLink="/game/{{game._id}}" class="nav-link"> {{game.title}} - {{game.price|currency}}</a>

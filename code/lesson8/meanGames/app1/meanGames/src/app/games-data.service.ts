@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders, HttpResponse } from '@angular/common/http';
 
 import { Game } from "./games-list/games-list.component";
 @Injectable({
@@ -25,26 +25,40 @@ export class GamesDataService {
     return this.http.get(url).toPromise().then(this.gotGame).catch(this.handleError);
   }
 
-  private gotGame(response: any) :Game[]{
+  private gotGame(response: any): Game[] {
     return response as Game[];
   }
 
-  private handleError(error: any):Game[] {
+  private handleError(error: any): Game[] {
     console.log("error: " + error);
     return [];
   }
 
-  public getGameyId(gameId:String): Promise<Game> {
-   
-    const url: string = this.baseURL + "/"+gameId;
+  public getGameyId(gameId: String): Promise<Game> {
+
+    const url: string = this.baseURL + "/" + gameId;
     return this.http.get(url).toPromise().then(this.gotOneGame).catch(this.handleErrorOneGame);
   }
 
-  private gotOneGame(response: any) :Game{
+
+  public deteleGame(gameId: String): Promise<string> {
+
+    const url: string = this.baseURL + "/" + gameId;
+    return this.http.delete(url).toPromise().then(this.deletedOneGame).catch(this.handleErrorDeleteOneGame);
+  }
+  private deletedOneGame(response: any): string {
+    return "Game Deleted";
+  }
+
+  private handleErrorDeleteOneGame(error: HttpErrorResponse): string {
+    console.log(error.message);
+    return error.message;
+  }
+  private gotOneGame(response: any): Game {
     return response as Game;
   }
 
-  private handleErrorOneGame(error: any):Game {
+  private handleErrorOneGame(error: any): Game {
     return new Game();
   }
 }
